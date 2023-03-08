@@ -1,4 +1,4 @@
-package com.fengwenyi.mybatisplusexample.config;
+package com.syj.prompt.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
@@ -7,13 +7,15 @@ import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerIntercept
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * @author Erwin Feng
  * @since 2021-03-08
  */
 @Configuration
-@MapperScan("com.fengwenyi.mybatisplusexample.mapper")
+@EnableTransactionManagement
+@MapperScan("com.syj.prompt.mapper")
 public class MyBatisPlusConfiguration {
 
     @Bean

@@ -1,4 +1,4 @@
-package com.fengwenyi.mybatisplusexample.handler;
+package com.syj.prompt.handler;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import lombok.extern.slf4j.Slf4j;

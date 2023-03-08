@@ -11,20 +11,21 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.fengwenyi</groupId>
-    <artifactId>MyBatis-Plus-Example</artifactId>
-    <version>3.2.1-BUILD</version>
+    <groupId>com.syj</groupId>
+    <artifactId>openai-prompt</artifactId>
+    <version>0.1</version>
     <packaging>jar</packaging>
-    <name>MyBatis-Plus-Example</name>
-    <description>Spring Boot 整合 MyBatis Plus 实例</description>
+    <name>openai-prompt-manage</name>
+    <description>openai-prompt管理项目</description>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
         <swagger2.version>2.9.2</swagger2.version>
         <JavaLib.version>2.1.1</JavaLib.version>
         <mybatis-plus.version>3.4.2</mybatis-plus.version>
         <fastjson.version>1.2.59</fastjson.version>
         <api-result.version>2.3.1</api-result.version>
+        <druid.version>1.2.5</druid.version>
     </properties>
 
     <dependencies>
@@ -39,6 +40,11 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${druid.version}</version>
         </dependency>
 
         <!-- lombok -->
@@ -73,27 +79,7 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${swagger2.version}</version>
         </dependency>
-
-        <!-- JavaLib -->
-        <dependency>
-            <groupId>com.fengwenyi</groupId>
-            <artifactId>JavaLib</artifactId>
-            <version>${JavaLib.version}</version>
-        </dependency>
-
-        <!-- 添加 Api Result 支持 -->
-        <dependency>
-            <groupId>com.fengwenyi</groupId>
-            <artifactId>api-result</artifactId>
-            <version>${api-result.version}</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/p6spy/p6spy -->
-        <dependency>
-            <groupId>p6spy</groupId>
-            <artifactId>p6spy</artifactId>
-            <version>3.9.1</version>
-        </dependency>
+        
     </dependencies>
 
     <build>

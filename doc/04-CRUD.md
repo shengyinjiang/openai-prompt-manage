@@ -17,7 +17,7 @@ AR即为ActiveRecord,是一种领域模型模式，一个模型类对应一个�
 
 ## MyBatis-Plus服务接口
 
-[CategoryRepositoryTests](../src/test/java/com.fengwenyi.mybatisplusexample.CategoryRepositoryTests)
+[CategoryRepositoryTests](../src/test/java/com.syj.mybatisplusexample.CategoryRepositoryTests)
 
 ### 数据添加
 
@@ -45,7 +45,7 @@ mpXxxService.updateById(entity);
 
 ## MyBatis数据库操作Mapper接口
 
-[CategoryMapperTests](../src/test/java/com.fengwenyi.mybatisplusexample.CategoryMapperTests)
+[CategoryMapperTests](../src/test/java/com.syj.mybatisplusexample.CategoryMapperTests)
 
 ### 数据添加
 
@@ -73,7 +73,7 @@ xxxMapper.updateById(entity);
 
 ## Mybatis-Plus提供的AR
 
-[CategoryModelTests](../src/test/java/com.fengwenyi.mybatisplusexample.CategoryModelTests)
+[CategoryModelTests](../src/test/java/com.syj.mybatisplusexample.CategoryModelTests)
 
 ### 数据添加
 

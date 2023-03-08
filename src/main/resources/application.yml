@@ -4,7 +4,7 @@ server:
 
 spring:
   application:
-    name: mybatis-plus-example
+    name: openai-prompt-manage
   profiles:
     active: dev
 
@@ -13,9 +13,9 @@ mybatis-plus:
   # xml
   mapper-locations: classpath:mapper/*Mapper.xml
   # 实体扫描，多个package用逗号或者分号分隔
-  type-aliases-package: com.fengwenyi.mybatisplusexample.entity
+  type-aliases-package: com.syj.prompt.entity
   # 扫描枚举类 # 支持统配符 * 或者 ; 分割
-  type-enums-package: com.fengwenyi.mybatisplusexample.entity.enums
+  type-enums-package: com.syj.prompt.entity.enums
   global-config:
     db-config:
       #数据库大写下划线转换
@@ -30,5 +30,5 @@ mybatis-plus:
     default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
 
 logback:
-  appName: mybatis-plus-example
+  appName: openai-prompt-manage
   fileType: log

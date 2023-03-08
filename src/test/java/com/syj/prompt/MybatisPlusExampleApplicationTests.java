@@ -1,4 +1,4 @@
-package com.fengwenyi.mybatisplusexample;
+package com.syj.prompt;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -29,7 +29,7 @@ mybatis-plus:
   # xml
   mapper-locations: classpath:mapper/*Mapper.xml
   # 实体扫描，多个package用逗号或者分号分隔
-  type-aliases-package: com.fengwenyi.mp3demo.model
+  type-aliases-package: com.syj.prompt.model
   configuration:
     # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
@@ -42,7 +42,7 @@ mybatis-plus:
 
 ```java
 @EnableTransactionManagement
-@MapperScan("com.fengwenyi.mp3demo.dao")
+@MapperScan("com.syj.prompt.dao")
 ```
 
 ## 增删改
@@ -432,7 +432,7 @@ public interface IEnum<T extends Serializable> {
 ```yaml
 mybatis-plus:
   # 扫描枚举类 # 支持统配符 * 或者 ; 分割
-  type-enums-package: com.fengwenyi.mp3demo.enums
+  type-enums-package: com.syj.prompt.enums
 ```
 
 差不多了吧，好像
