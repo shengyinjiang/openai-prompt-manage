@@ -19,4 +19,7 @@ public class PromptsListReqVo extends AbstractReqVo{
     @ApiModelProperty(value = "0:待识别 1:识别中 2:识别结束 3:识别失败")
     private Integer promptStatus;
     
+    @ApiModelProperty(value = "是否需要更新状态 0:否 1:是")
+    private Integer needUpdateStatus = 0;
+    
 }

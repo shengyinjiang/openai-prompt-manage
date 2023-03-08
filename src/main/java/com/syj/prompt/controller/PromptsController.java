@@ -122,7 +122,7 @@ public class PromptsController {
                     return vo;
                 }).collect(Collectors.toList()));
         
-        if (page.getRecords() != null) {
+        if (page.getRecords() != null && reqVo.getNeedUpdateStatus() == 1) {
             for (PromptsEntity entity : page.getRecords()) {
                 entity.setPromptStatus(PromptStatusEnum.PROCESSING);
                 entity.setUpdateTime(LocalDateTime.now());
