@@ -9,6 +9,7 @@ import com.syj.prompt.repository.MPPromptsRepository;
 import com.syj.prompt.vo.req.PromptsAddReqVo;
 import com.syj.prompt.vo.req.PromptsDelReqVo;
 import com.syj.prompt.vo.req.PromptsListReqVo;
+import com.syj.prompt.vo.req.PromptsUpdateVo;
 import com.syj.prompt.vo.res.PromptsListResVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -26,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -81,6 +83,20 @@ public class PromptsController {
         }
     }
 
+    @PostMapping("/update")
+    @ApiOperation(value = "更新chatgpt指令结果", notes = "更新chatgpt指令结果")
+    @ResponseStatus(HttpStatus.OK)
+    public void updatePrompt(@RequestBody PromptsUpdateVo reqVo) {
+        List<PromptsEntity> entities = new ArrayList<>();
+        if (reqVo.getPromptId() != null) {
+            PromptsEntity entity = new PromptsEntity();
+            entity.setId(reqVo.getPromptId());
+            entity.setPromptResult(reqVo.getPromptResult());
+            entity.setPromptStatus(PromptStatusEnum.COMPLETED);
+            mpPromptsRepository.updateById(entity);
+        }
+    }
+
     @PostMapping("/list")
     @ApiOperation(value = "分页获取chatgpt指令列表", notes = "分页获取chatgpt指令列表")
     @ResponseStatus(HttpStatus.OK)
@@ -105,6 +121,14 @@ public class PromptsController {
                     BeanUtils.copyProperties(l, vo);
                     return vo;
                 }).collect(Collectors.toList()));
+        
+        if (page.getRecords() != null) {
+            for (PromptsEntity entity : page.getRecords()) {
+                entity.setPromptStatus(PromptStatusEnum.PROCESSING);
+                entity.setUpdateTime(LocalDateTime.now());
+            }
+            mpPromptsRepository.saveOrUpdateBatch(page.getRecords());
+        }
         return result;
     }
 
