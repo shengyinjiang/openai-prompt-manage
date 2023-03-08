@@ -18,6 +18,7 @@ public class MyBatisPlusAutoFillMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void insertFill(MetaObject metaObject) {
         metaObject.setValue("createTime", LocalDateTime.now());
+        metaObject.setValue("deleted", 0); // 未删除
 //        log.info("start insert fill ....");
 //        this.strictInsertFill(metaObject, "createTime", LocalDateTime.class, LocalDateTime.now()); // 起始版本 3.3.0(推荐使用)
         // 或者

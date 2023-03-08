@@ -78,6 +78,11 @@ public class PromptsEntity extends Model<PromptsEntity> {
     @TableField(value = "update_time", fill = FieldFill.UPDATE)
     private LocalDateTime updateTime;
 
+    /**
+     * 0未删除，1已删除，默认0
+     */
+    private Integer deleted;
+
     @Override
     protected Serializable pkVal() {
         return this.id;

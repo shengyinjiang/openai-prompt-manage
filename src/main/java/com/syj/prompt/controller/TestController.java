@@ -21,7 +21,7 @@ public class TestController {
      *
      * @return
      */
-    @GetMapping("/wangsu1")
+    @GetMapping("/wangsu")
     @ResponseStatus(HttpStatus.OK)
     public String testWangsu2() {
         return "aaaaaaaaaaabbbbbbbbbbbbbbbaaaaaaaeeaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n"

@@ -28,4 +28,13 @@ public enum PromptStatusEnum implements IEnum<Integer> {
     public Integer getValue() {
         return this.value;
     }
+
+    public static PromptStatusEnum match(int value) {
+        for (PromptStatusEnum t : PromptStatusEnum.values()) {
+            if (t.getValue() == value) {
+                return t;
+            }
+        }
+        return null;
+    }
 }
