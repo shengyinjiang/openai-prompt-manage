@@ -9,7 +9,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 /**
- * @author syj@yxt.com
+ * @author syj
  * @since 2023/3/8 17:36
  */
 @Data

@@ -2,7 +2,7 @@ package com.syj.prompt.config;
 
 import springfox.documentation.spring.web.paths.AbstractPathProvider;
 /**
- * @author syj@yxt.com
+ * @author syj
  * @since 2023/3/8 12:55
  */
 public class ApiSwaggerPathProvider extends AbstractPathProvider {

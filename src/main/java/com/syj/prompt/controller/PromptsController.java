@@ -37,7 +37,7 @@ import java.util.stream.Collectors;
 /**
  * opai提示语管理控制类
  *
- * @author syj@yxt.com
+ * @author syj
  * @since 2023/3/8 16:56
  */
 @RestController

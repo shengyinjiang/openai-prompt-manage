@@ -4,7 +4,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
- * @author syj@yxt.com
+ * @author syj
  * @since 2023/3/8 17:01
  */
 @Data

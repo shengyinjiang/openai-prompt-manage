@@ -36,7 +36,7 @@ public class PromptsRepositoryImpl extends ServiceImpl<IPromptsMapper, PromptsEn
         PromptsEntity promptsEntity = this.getById(promptId);
 
         // 使用OKHttp发送钉钉消息
-        String url = "https://oapi.dingtalk.com/robot/send?access_token=fb863a77b629b890827ed3b5f98aec6add550176e98faf94de5a8724873cd498";
+        String url = "https://oapi.dingtalk.com/robot/send?access_token=xxxxxx";
         String prompt = promptsEntity.getPrompt();
         if (prompt.length() > 42) {
             prompt = prompt.substring(0, 42);
