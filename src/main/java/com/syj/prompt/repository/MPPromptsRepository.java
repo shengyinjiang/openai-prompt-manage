@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface MPPromptsRepository extends IService<PromptsEntity> {
 
+    void sendDingdingMsg(Long promptId);
 }
