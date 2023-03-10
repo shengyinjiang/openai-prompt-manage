@@ -113,12 +113,16 @@ public class PromptsController {
         if (StringUtils.hasText(reqVo.getCreateUserName())) {
             queryWrapper.eq(PromptsEntity::getCreateUserName, reqVo.getCreateUserName());
         }
+        if (StringUtils.hasText(reqVo.getPrompt())) {
+            queryWrapper.like(PromptsEntity::getPrompt, reqVo.getPrompt());
+        }
         if (reqVo.getPromptStatus() != null) {
             queryWrapper.eq(PromptsEntity::getPromptStatus, PromptStatusEnum.match(reqVo.getPromptStatus()));
         }
         if (reqVo.getPromptId() != null) {
             queryWrapper.eq(PromptsEntity::getId, reqVo.getPromptId());
         }
+        
         queryWrapper.eq(PromptsEntity::getDeleted, 0);
         Page<PromptsEntity> page = mpPromptsRepository.page(pageable, queryWrapper);
         Page<PromptsListResVo> result = new Page<>();

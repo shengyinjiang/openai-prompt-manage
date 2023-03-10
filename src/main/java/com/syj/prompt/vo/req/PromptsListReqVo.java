@@ -12,6 +12,9 @@ public class PromptsListReqVo extends AbstractReqVo{
 
     @ApiModelProperty(value = "提示语ID")
     private Long promptId;
+
+    @ApiModelProperty(value = "提示语")
+    private String prompt;
     
     @ApiModelProperty(value = "创建人ID")
     private String createUserId;
