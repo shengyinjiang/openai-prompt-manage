@@ -21,7 +21,7 @@ public class AbstractReqVo implements RequestValidate{
     private String orderBy;
 
     @ApiModelProperty(value = "正序:asc,倒序:desc，默认desc, 无排序可不传")
-    private String direction;
+    private String direction = "desc";
 
 
 }

@@ -1,6 +1,7 @@
 package com.syj.prompt.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.syj.prompt.entity.PromptsEntity;
@@ -123,6 +124,16 @@ public class PromptsController {
             queryWrapper.eq(PromptsEntity::getId, reqVo.getPromptId());
         }
         
+        if (StringUtils.hasText(reqVo.getOrderBy()) && StringUtils.hasText(reqVo.getDirection())) {
+            OrderItem orderItem = new OrderItem();
+            orderItem.setColumn(com.baomidou.mybatisplus.core.toolkit.StringUtils.camelToUnderline(reqVo.getOrderBy()));
+            if ("asc".equals(reqVo.getDirection())) {
+                orderItem.setAsc(true);
+            } else {
+                orderItem.setAsc(false);
+            }
+            pageable.addOrder(orderItem);
+        }
         queryWrapper.eq(PromptsEntity::getDeleted, 0);
         Page<PromptsEntity> page = mpPromptsRepository.page(pageable, queryWrapper);
         Page<PromptsListResVo> result = new Page<>();
