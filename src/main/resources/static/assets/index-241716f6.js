@@ -1,0 +1,1 @@
+import{aD as s}from"./index-9270c606.js";const a=a=>s.post({url:"/user/login",data:a}),r=()=>s.get({url:"/user/loginOut"}),l=({params:a})=>s.get({url:"/user/list",params:a}),t=a=>s.get({url:"/role/list",params:a}),e=a=>s.get({url:"/role/list",params:a});export{t as a,e as b,r as c,l as g,a as l};
